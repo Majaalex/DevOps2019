@@ -32,6 +32,7 @@ function App() {
    
    return (
       <div id={ 'wrapper' }>
+         SOMETHING COOL
          <div>
             <Form
                placeholder={ 'Search for something..' }
