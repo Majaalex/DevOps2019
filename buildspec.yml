@@ -5,18 +5,19 @@ phases:
         runtime-versions:
             java: corretto11
         commands:
+            - echo INSTALLING ON `date`
             - npm install
     pre_build:
         commands:
-            - echo Installing on `date`
+            - echo UNIT TESTING ON `date`
             - npm run unit
     build:
         commands:
-            - echo Build started on `date`
+            - echo COMPILING BUILD ON `date`
             - npm run build
     post_build:
         commands:
-            - echo Build completed on `date`
+            - echo EXECUTION FINISHED ON `date`
             
 artifacts:
     files:
