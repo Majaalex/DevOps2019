@@ -32,7 +32,6 @@ function App() {
    
    return (
       <div id={ 'wrapper' }>
-         <div>TESTING SOMETHING NEW</div>
          <div>
             <Form
                placeholder={ 'Search for something..' }
