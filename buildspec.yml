@@ -20,3 +20,4 @@ artifacts:
     files:
         - '**/*'
     base-directory: 'build'
+    name: build-$(date +%Y-%m-%d) 
