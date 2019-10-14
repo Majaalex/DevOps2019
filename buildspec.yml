@@ -4,10 +4,12 @@ phases:
     install:
         runtime-versions:
             java: corretto11
+        commands:
+            - npm install
     pre_build:
         commands:
             - echo Installing on `date`
-            - npm install
+            - npm run unit
     build:
         commands:
             - echo Build started on `date`

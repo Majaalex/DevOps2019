@@ -1,3 +1,8 @@
-## Hello
+### Push to Master
+> npm run push
 
-potentially working??
+### Pull-Request
+> npm run pull-request
+
+### Run Unit Tests
+> npm run unit
