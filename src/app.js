@@ -33,13 +33,13 @@ function App() {
    return (
       <div id={ 'wrapper' }>
          <div>
-            <div>Nice Frostend m8</div>
             <Form
                placeholder={ 'Search for something..' }
                response={ response }
             />
             <Content query={ state } />
          </div>
+         <div>Hello Hello Hello!</div>
       </div>
    )
 }
