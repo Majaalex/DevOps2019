@@ -1,5 +1,5 @@
 {
-  "name": "unit-testing",
+  "name": "devops-2019",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "unit": "sh scripts/test.sh",
-    "pull-request": "sh scripts/pull-request.sh",
     "push": "sh scripts/push.sh"
   },
   "eslintConfig": {
