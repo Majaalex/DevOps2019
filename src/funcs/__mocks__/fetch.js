@@ -955,8 +955,23 @@ const sample = {
     "request": {}
 }
 
-function fetch() {
-    return Promise.resolve(sample)
+const other = {
+    foo: 'bar'
+}
+
+function fetch(param) {
+    let response;
+
+    if (param === 'success') {
+        response = sample
+    } else {
+        response = other
+    }
+
+    return Promise.resolve(response)
 }
   
-export default fetch;
+export {
+    sample,
+    fetch
+};
