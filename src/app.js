@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './components/form';
 import Content from './components/content';
 import './interface/css/general.scss';
@@ -42,7 +42,17 @@ function App() {
          })
       })
    }
-   
+
+   useEffect(() => {
+    trainService.getData("TPE")
+    .then(res => {
+      dispatch({
+        status: res.status,
+        data: res.data
+      })
+    })
+   }, [dispatch])
+
    return (
       <div id={ 'wrapper' }>
          <div>
