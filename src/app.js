@@ -2,16 +2,23 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/form';
 import Content from './components/content';
 import './interface/css/general.scss';
-import fetch from './funcs/fetch'
+import axios from 'axios';
 
-function App() {
+function App({ sample }) {
 
    // LOCAL STATE
    const [ state, dispatch ] = useState({})
 
+   // IF SAMPLE DATA WAS GIVEN, USE IT
+   useEffect(() => {
+      if (sample !== undefined) {
+         dispatch(sample)
+      }
+   }, [])
+
    // FORM RESPONSE
    const response = (value) => {
-      fetch(value).then(result => {
+      axios.get('https://rata.digitraffic.fi/api/v1/live-trains/station/HKI/' + value).then(result => {
          
          // TPE = TAMPERE
          // KR = KARJAA
@@ -35,8 +42,7 @@ function App() {
       // ON ERROR
       }).catch(error => {
          dispatch({
-            status: 404,
-            reason: error
+            status: 404
          })
       })
    }
