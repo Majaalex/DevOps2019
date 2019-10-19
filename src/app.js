@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/form';
 import Content from './components/content';
 import './interface/css/general.scss';
-import trainService from './services/trains'
+import fetch from './funcs/fetch'
 
 function App() {
 
@@ -11,9 +11,7 @@ function App() {
 
    // FORM RESPONSE
    const response = (value) => {
-      trainService.getData(value)
-         .then(result => {
-            console.log(result)
+      fetch(value).then(result => {
          
          // TPE = TAMPERE
          // KR = KARJAA
@@ -43,15 +41,15 @@ function App() {
       })
    }
 
+   // INITIALLY LOAD 'TAMPERE'
    useEffect(() => {
-    trainService.getData("TPE")
-    .then(res => {
-      dispatch({
-        status: res.status,
-        data: res.data
+      fetch("TPE").then(res => {
+         dispatch({
+            status: res.status,
+            data: res.data
+         })
       })
-    })
-   }, [dispatch])
+   }, [])
 
    return (
       <div id={ 'wrapper' }>
