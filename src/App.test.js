@@ -2,7 +2,7 @@ import React from 'react'
 import { render, waitForElement } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 jest.mock('./services/trains')
-import App from './App'
+import App from './app'
 
 
 describe('<App />', () => {
