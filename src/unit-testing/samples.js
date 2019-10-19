@@ -1,4 +1,4 @@
-const sample = {
+const success = {
     "data": [
         {
             "trainNumber": 8467,
@@ -955,23 +955,16 @@ const sample = {
     "request": {}
 }
 
-const other = {
-    foo: 'bar'
+const no_content = {
+    status: 204
 }
 
-function fetch(param) {
-    let response;
-
-    if (param === 'success') {
-        response = sample
-    } else {
-        response = other
-    }
-
-    return Promise.resolve(response)
+const error = {
+    status: 404
 }
-  
+
 export {
-    sample,
-    fetch
-};
+    success,
+    no_content,
+    error
+}
