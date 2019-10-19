@@ -41,16 +41,6 @@ function App() {
       })
    }
 
-   // INITIALLY LOAD 'TAMPERE'
-   useEffect(() => {
-      fetch("TPE").then(res => {
-         dispatch({
-            status: res.status,
-            data: res.data
-         })
-      })
-   }, [])
-
    return (
       <div id={ 'wrapper' }>
          <div>
