@@ -1,16 +1,18 @@
 # DevOps 2019
 
-The project was to create a continuous integration pipline with Amazon Web Services. 
+The project was to create a continuous integration pipline with Amazon Web Services.
 
 ## 1. Pull request pipeline
 
+The repository makes use of a pull request pipeline on AWS to make sure there are no issues with the changes in the pull request. The pipeline will trigger an AWS codeBuild based on the buildspec.yml file, however this in this pipeline we do not deploy the build. We only test that it is compatible with the master branch.
 
 ## 2. Merge request pipeline
 
+The merge pipeline is run where we successfully merge a pull request to the master branch. When the pipeline triggers it uses the buildspec.yml file to build the applicatin with AWS codeBuild. The application is then deployed to an S3 bucket as a static website.
 
 ## 3. Build status notifications from master pipeline to discord or/and email
 
-To send notifications of the builds from the master pipeline we used AWS CloudWatch, AWS Simple Notification service and AWS Lambda.
+To send notifications of the builds from the merge pipeline we used AWS CloudWatch, AWS Simple Notification service and AWS Lambda.
 
 The process is started from an AWS service, in this case our master request pipline project. Cloudwatch logs the build project and has been configured with a rule to create a message that is sent to the next component. In our SNS we can subscribe emails and our AWS Lambda function to be triggered. The SNS send the message to our emails and forward the message to AWS lambda.
 
@@ -19,5 +21,8 @@ Our lambda function is written in NodeJs. The lambda function takes the message 
 ## 4. Application and unit testing
 
 
-## 5. Github require status checks for pull requests 
+## 5. Github require status checks for pull requests
 
+On a pull request, there is an added check where it requires the pull request codeBuild to succeed for anyone to be able to merge the pull request. This is achieved by simply adding a branch protection rule in github. It connects the status check to the webhook we have already setup in the pipelines and waits for a result, either success or fail, from the codeBuild.
+
+Additionally, the same person who makes a pull request cannot merge it into master. We require a second person to approve the pull request.
