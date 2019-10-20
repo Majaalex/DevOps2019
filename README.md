@@ -7,8 +7,6 @@ The project was to create a continuous integration pipline with Amazon Web Servi
 * [Pull request pipeline](https://github.com/Majaalex/DevOps2019#Pull-request-pipeline)
 * [Merge request pipeline](https://github.com/Majaalex/DevOps2019#Merge-request-pipeline)
 * [Build status notifications](https://github.com/Majaalex/DevOps2019#Build-status-notifications)
-* [Merge request pipeline](https://github.com/Majaalex/DevOps2019#Merge-request-pipeline)
-* [Build status notifications](https://github.com/Majaalex/DevOps2019#Build-status-notifications)
 * [Status requirements for pull requests](https://github.com/Majaalex/DevOps2019#Status-requirements-for-pull-requests)
 
 
