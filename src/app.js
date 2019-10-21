@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/form';
 import Content from './components/content';
 import './interface/css/general.scss';
-import axios from 'axios';
+import { fetch } from './funcs/fetch';
 
 function App({ sample }) {
 
@@ -18,7 +18,7 @@ function App({ sample }) {
 
    // FORM RESPONSE
    const response = (value) => {
-      axios.get('https://rata.digitraffic.fi/api/v1/live-trains/station/HKI/' + value).then(result => {
+      fetch(value).then(result => {
          
          // TPE = TAMPERE
          // KR = KARJAA
