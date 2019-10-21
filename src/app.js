@@ -52,7 +52,7 @@ function App({ sample }) {
    return (
       <div id={ 'wrapper' }>
          <div>
-            <div id={ 'header' }>Trains from Helsinki</div>
+            <div id={ 'header' }>Trains from Uganda</div>
             <Form
                placeholder={ 'Where would you like to go?' }
                response={ response }
