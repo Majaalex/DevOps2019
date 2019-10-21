@@ -24,6 +24,8 @@ function App({ sample }) {
          // KR = KARJAA
          // EPO = ESPOO
 
+         // TRYING TO WAKE UP THE AWS BOT
+
          // IF NO DATA WAS FOUND
          if (result.data.errorMessage !== undefined) {
             dispatch({
