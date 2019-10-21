@@ -1,10 +1,27 @@
-import React from 'react'
-import { render, waitForElement } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import App from '../app'
-import { success, no_content, error } from './samples'
+import React from 'react';
+import { render, waitForElement } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import App from '../app';
+import { success, no_content, error } from './samples';
+import { base as actual_base } from '../funcs/fetch';
+import { fetch, base as test_base } from './fetch';
 
 describe('Test different API request samples', async () => {
+
+    // TEST THE GET REQUEST
+    test('HTTP Request base & value', async () => {
+        fetch('foobar').then(result => {
+
+            // MAKE SURE BASE & GIVEN VALUES MATCH
+            expect(result).toBe('foobar')
+            expect(test_base).toBe(actual_base)
+        })
+    })
+
+    // TEST THE GET REQUEST
+    test('HTTP Method', async () => {
+        expect(success.config.method).toBe('get')
+    })
 
     // EVERYTHING OK (200)
     test('Query OK', async () => {
