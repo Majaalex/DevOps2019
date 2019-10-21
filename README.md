@@ -3,12 +3,31 @@
 The project was to create a continuous integration pipline with Amazon Web Services.
 
 ## Table of Contents
+* [Points of interest & custom bash scripts](https://github.com/Majaalex/DevOps2019#Points-of-interest-&-custom-bash-scripts)
 * [Frontend application & unit testing](https://github.com/Majaalex/DevOps2019#Frontend-application-&-unit-testing)
 * [Pull request pipeline](https://github.com/Majaalex/DevOps2019#Pull-request-pipeline)
 * [Merge request pipeline](https://github.com/Majaalex/DevOps2019#Merge-request-pipeline)
 * [Build status notifications](https://github.com/Majaalex/DevOps2019#Build-status-notifications)
 * [Status requirements for pull requests](https://github.com/Majaalex/DevOps2019#Status-requirements-for-pull-requests)
 
+## Points of interest & custom bash scripts
+The frontend application is located in:
+> /src/
+
+The unit tests are located in:
+> /src/unit-tests/
+
+Custom scripts:
+> /scripts/
+
+Launch application in localhost:
+> npm start
+
+Run unit tests:
+> npm run unit
+
+Create & push new branch to github:
+> npm run push
 
 ## Frontend application & unit testing
 The frontend application is written in [React](https://reactjs.org/) and unit tested with the [React testing library](https://github.com/testing-library/react-testing-library). The application utilizes [VR.fi’s Rest API](https://www.digitraffic.fi/rautatieliikenne/) to fetch and present departing trains from Helsinki based what station the user searches for.
